@@ -33,6 +33,20 @@ public class Course
         Console.WriteLine($"{student.Name} har registrerats på {Name}.");
     }
 
+    public void Remove(Student student)
+    {
+        if (!Students.Contains(student))
+        {
+            Console.WriteLine($"{student.Name} är inte registrerad på {Name}.");
+            return;
+        }
+
+        Students.Remove(student);
+        student.Courses.Remove(this);
+
+        Console.WriteLine($"{student.Name} har avregistrerats från {Name}.");
+    }
+
     public override string ToString()
     {
         return $"{Name} ({Students.Count}/{MaxSeats} platser)";

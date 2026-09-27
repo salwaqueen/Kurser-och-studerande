@@ -15,6 +15,11 @@ public class Student
         course.Enroll(this);
     }
 
+    public void Leave(Course course)
+    {
+        course.Remove(this);
+    }
+
     public override string ToString()
     {
         return Name;

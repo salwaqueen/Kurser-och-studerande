@@ -14,3 +14,16 @@ Console.WriteLine(math);
 Console.WriteLine($"Salwas kurser: {salwa.Courses.Count}");
 Console.WriteLine($"Alis kurser: {ali.Courses.Count}");
 Console.WriteLine($"Saras kurser: {sara.Courses.Count}");
+Console.WriteLine("\n--- Test av avregistrering ---");
+
+math.Remove(salwa);
+ali.Leave(math);
+math.Remove(salwa);
+
+Console.WriteLine(math);
+Console.WriteLine($"Salwas kurser: {salwa.Courses.Count}");
+Console.WriteLine($"Alis kurser: {ali.Courses.Count}");
+
+sara.Join(math);
+Console.WriteLine(math);
+Console.WriteLine($"Saras kurser: {sara.Courses.Count}");

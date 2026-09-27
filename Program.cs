@@ -27,3 +27,19 @@ Console.WriteLine($"Alis kurser: {ali.Courses.Count}");
 sara.Join(math);
 Console.WriteLine(math);
 Console.WriteLine($"Saras kurser: {sara.Courses.Count}");
+Console.WriteLine("\n--- Test av listor ---");
+
+Course programming = new Course("Programmering", 3);
+
+programming.RollCall();
+salwa.Schedule();
+
+programming.Enroll(salwa);
+sara.Join(programming);
+
+math.RollCall();
+programming.RollCall();
+
+salwa.Schedule();
+ali.Schedule();
+sara.Schedule();

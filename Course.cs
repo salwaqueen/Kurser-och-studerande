@@ -46,7 +46,21 @@ public class Course
 
         Console.WriteLine($"{student.Name} har avregistrerats från {Name}.");
     }
+public void RollCall()
+{
+    Console.WriteLine($"\nDeltagare i {Name}:");
 
+    if (Students.Count == 0)
+    {
+        Console.WriteLine("Inga studenter är registrerade.");
+        return;
+    }
+
+    foreach (Student student in Students)
+    {
+        Console.WriteLine(student);
+    }
+}
     public override string ToString()
     {
         return $"{Name} ({Students.Count}/{MaxSeats} platser)";

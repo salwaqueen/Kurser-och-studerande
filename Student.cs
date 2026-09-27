@@ -19,7 +19,21 @@ public class Student
     {
         course.Remove(this);
     }
+public void Schedule()
+{
+    Console.WriteLine($"\nKurser för {Name}:");
 
+    if (Courses.Count == 0)
+    {
+        Console.WriteLine("Inga kurser är registrerade.");
+        return;
+    }
+
+    foreach (Course course in Courses)
+    {
+        Console.WriteLine(course);
+    }
+}
     public override string ToString()
     {
         return Name;

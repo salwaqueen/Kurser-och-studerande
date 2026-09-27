@@ -10,6 +10,11 @@ public class Student
         Name = name;
     }
 
+    public void Join(Course course)
+    {
+        course.Enroll(this);
+    }
+
     public override string ToString()
     {
         return Name;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public class Course
@@ -10,6 +11,26 @@ public class Course
     {
         Name = name;
         MaxSeats = maxSeats;
+    }
+
+    public void Enroll(Student student)
+    {
+        if (Students.Contains(student))
+        {
+            Console.WriteLine($"{student.Name} är redan registrerad på {Name}.");
+            return;
+        }
+
+        if (Students.Count >= MaxSeats)
+        {
+            Console.WriteLine($"{Name} är full.");
+            return;
+        }
+
+        Students.Add(student);
+        student.Courses.Add(this);
+
+        Console.WriteLine($"{student.Name} har registrerats på {Name}.");
     }
 
     public override string ToString()
